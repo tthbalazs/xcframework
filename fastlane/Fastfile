@@ -1,3 +1,7 @@
 lane :test do
-  xcframework
+  xcframework(
+    scheme: 'bar',
+    platforms: 'something',
+    workspace: 'workspace'
+  )
 end
