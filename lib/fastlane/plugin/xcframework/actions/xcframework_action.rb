@@ -9,6 +9,7 @@ module Fastlane
         workspace = params[:workspace]
         derived_data_path = params[:derived_data_path] ||= '~/Library/Developer/Xcode/DerivedData'
         build_path = params[:build_path] ||= './Build'
+        configuration = params[:configuration] || = 'Release'
 
         # TODO: Allow platforms to be configurable
         platforms = {
@@ -21,6 +22,7 @@ module Fastlane
           XcodebuildAction.run(
             archive: true,
             archive_path: "#{build_path}/Archive/#{scheme}_#{platform.to_s}",
+            configuration: configuration,
             scheme: scheme,
             derived_data_path: derived_data_path,
             workspace: workspace,
