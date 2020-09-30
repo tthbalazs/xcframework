@@ -84,6 +84,13 @@ module Fastlane
             type: String
           ),
           FastlaneCore::ConfigItem.new(
+            key: :configuration,
+            env_name: "XCFRAMEWORK_CONFIGURATION",
+            description: "The configuration to build the target with",
+            optional: true,
+            type: String
+          ),
+          FastlaneCore::ConfigItem.new(
             key: :derived_data_path,
             env_name: "XCFRAMEWORK_DERIVED_DATA_PATH",
             description: "Derived data path to pass along to xcodebuild",
